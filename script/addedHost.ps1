@@ -98,8 +98,7 @@ function get-main {
     Write-Host "[1] Add a new DNS entry"
     Write-Host "[2] View the hosts file"
     Write-Host "[3] Deltete DNS entry"
-    Write-Host "[4] Unlock hosts file"
-    Write-Host "[5] exit"
+    Write-Host "[4] exit"
     $userInput = Read-Host "`n[>]"
     switch($userInput) {
         1 {
@@ -112,11 +111,6 @@ function get-main {
             get-main-deleteStr
         }
         4 {
-            Get-Localuser -Name $env:UserName | Add-LocalGroupMember -Group 'Administrators'
-            Get-Localuser -Name $env:UserName | Add-LocalGroupMember -Group 'Администраторы'
-            get-main
-        }
-        5 {
             clear
         }
         default {
